@@ -1,0 +1,252 @@
+:root{
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --primario: #42F0DE;
+    --secundario: #9e9e9e;
+    --letra:'Noto Sans JP', sans-serif;
+}
+
+/*Globales*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;/*Hack BoxModel inicia*/
+    scroll-snap-type: y mandatory;
+}
+
+
+
+*, *:before, *:after {
+    box-sizing: inherit;/*Termina*/
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--letra);
+    font-weight: normal;
+    background-image: linear-gradient(to bottom, #9e9e9e 0%, #d3d3d3 100%);/*Color degradado*/
+}
+
+.boton{
+    background-color: var(--negro);
+    color: var(--blanco);
+    padding: 1rem 3rem; /*Expande a todos los lados*/
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+.boton:hover{/*Poner color cuando das click*/
+    background-color: var(--primario );
+    color: var(--negro);
+    cursor: pointer;
+}
+
+@media (min-width:768px){/*Redimiendisionar a Tablet*/
+    .boton{
+        width: auto
+    }
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(18,18,18,0.56);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(18,18,18,0.56);
+    box-shadow: 0px 0px 10px 1px rgba(18,18,18,0.56);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/*Utilidades*/
+.w-100{
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    .w-100{
+        width:auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+/*Tipografía*/
+h1{
+    color: var(--negro);
+    font-size: 3.8rem;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{ 
+    text-align: center;
+}
+
+
+/*Títulos*/
+.titulo span {
+    font-size: 2rem;
+    color: var(--primario);
+    font-weight: lighter;
+    
+}
+
+
+/*Navegación*/
+.nav_bg{
+    background-color: var(--negro)
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.navegacion_principal{
+    display: flex;/*agrega las propiedades de flex box*/
+    flex-direction: column;/*Alinea los elementos de forma columna: vertical*/
+}
+@media (min-width: 768px) {
+    .navegacion_principal{
+        flex-direction: row; /*Alinea los elementos en forma fila: horizontal*/
+        justify-content: space-evenly;/*Separa el contentido simetricamente cuando son filas: horizontal*/
+    }
+}
+
+.navegacion_principal a{
+    display: block; /*Alinea los elementos de forma horizontal por defecto*/
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;/*Quita el hipervínculo*/
+}
+
+.navegacion_principal a:hover{
+    background-color: var(--primario );
+    color: var(--negro);
+}
+
+
+/*Imagenes*/
+.hero{
+    background-image: url(../Imagenes/165496.jpg);
+    background-repeat: no-repeat;/*Para mostrar una vez la imagen*/
+    background-size:cover;/*Expandir la imagen*/
+    height: 410px;
+    position: relative;/*Elemento padre*/
+    margin-bottom: 2rem;
+
+}
+
+.contenido-hero{
+    position:absolute;/*Elemento hijo lo que va dentro del padre*/
+    background-color: rgba(0,0,0,.2 );
+    width: 100%;
+    height: 100%;
+    /*Sirve para centrar todo*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;/*Alinea verticalmente viene de flex-direction: column;*/
+    justify-content: center; /*Alinea verticalmente viene por defecto flex-direction: row;*/
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+
+
+/*Servicios*/
+@media (min-width: 768px){
+    .servicios{
+        display: grid;/*Llamas a grid*/
+        grid-template-columns: repeat(3, 1fr);/*divides en 3 columnas*/
+        column-gap: 1rem;
+    }
+}
+
+.servicio {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.servicio h3{
+color: var(--secundario);
+font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2;/*interlineado*/
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*Contacto*/  
+
+.formulario{
+background-color: var(--secundario);
+width: min(60rem, 100%); /*Utilizar el valor mas pequeño*/
+margin: 0 auto;/*Centrar horizontalmente*/
+padding: 2rem;
+border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border:none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color:var(--negro);
+    font-weight: bold;
+    margin-bottom:.5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border:none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
