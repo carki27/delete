@@ -13,8 +13,6 @@ html{
     scroll-snap-type: y mandatory;
 }
 
-
-
 *, *:before, *:after {
     box-sizing: inherit;/*Termina*/
 }
@@ -144,7 +142,7 @@ h1,h2,h3{
 
 /*Imagenes*/
 .hero{
-    background-image: url(../Imagenes/165496.jpg);
+    background-image: url(../img/165496.jpg);
     background-repeat: no-repeat;/*Para mostrar una vez la imagen*/
     background-size:cover;/*Expandir la imagen*/
     height: 410px;
@@ -250,3 +248,6 @@ border-radius: 1rem;
     border-radius: .5rem;
 }
 
+footer {
+    text-align: center;
+}
